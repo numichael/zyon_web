@@ -3,7 +3,7 @@
     grid-template-columns: repeat(3,1fr);
     justify-content: space-between;
     gap: 2rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 #footer .row .column{
     width: 100%;
@@ -77,30 +77,71 @@ font-weight: 600;
     color: var(--color-primary);
 }
 
-@media (max-width:900px){
-    #footer .row{
-        grid-template-columns: repeat(2,1fr);
+/* Tablets (up to 900px) */
+@media (max-width: 900px) {
+    #footer .row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
-    #footer .container{
-        display: flex;
-        align-items: center; 
-        flex-direction: column;
-        /* text-align: center; */
-    }
-}
-@media (max-width:768px){
-    #footer .row{
-        grid-template-columns: 100%;
-    }
-    #footer .logo{
-        justify-content: center;
-    }
-    #footer .newsletter h3{
-        text-align: center;
-    }
+
     #footer .container {
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+
+    #footer .newsletter .control_container {
+        max-width: 400px;
+        /* Adjust max-width for smaller screens */
+    }
+
+    #footer .copyright h3 {
+        font-size: 14px;
+        /* Adjust font size */
+    }
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+    #footer .row {
+        grid-template-columns: 1fr;
+        /* Single column for mobile */
+        gap: 1rem;
+    }
+
+    #footer .logo {
+        justify-content: center;
+        /* Center the logo */
+    }
+
+    #footer .newsletter h3 {
+        text-align: center;
+        /* Center align the heading */
+    }
+
+    #footer .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #footer .newsletter .control_container {
+        max-width: 350px;
+        /* Further reduce width for small screens */
+    }
+
+    #footer .routes_container .route_item {
+        font-size: 14px;
+        /* Smaller font size for mobile */
+    }
+
+    #footer .copyright h3 {
+        font-size: 13px;
+        /* Further reduced font size */
+    }
+
+    #footer .routes_name {
+        font-size: 16px;
+        /* Adjust section heading for mobile */
     }
 }

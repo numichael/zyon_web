@@ -108,14 +108,97 @@ input{
 }
 
 /* Responsive code */
-@media (max-width: 800px){
-    #contact .container{
+/* Tablets (up to 800px) */
+@media (max-width: 800px) {
+    #contact {
+        padding: 3rem 2rem;
+        /* Adjust padding for smaller screens */
+    }
+
+    #contact .container {
+        flex-direction: column;
+        /* Stack form and options vertically */
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    #contact .contact_form {
+        max-width: 100%;
+        /* Form takes full width */
+        padding: 20px;
+    }
+
+    #contact .contact_options .option {
+        padding: 1rem;
+        /* Slightly smaller padding */
+    }
+
+    #contact .contact_options .icon_container {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 22px;
+    }
+}
+
+/* Mobile (up to 600px) */
+@media (max-width: 600px) {
+    #contact {
+        padding: 2rem 1rem;
+        /* Compact padding */
+    }
+
+    #contact .title {
+        font-size: 32px;
+        /* Adjust title size for smaller screens */
+    }
+
+    #contact .container {
+        gap: 15px;
+    }
+
+    #contact .contact_form {
+        padding: 15px;
+    }
+
+    #contact .row {
+        flex-direction: column;
+        /* Stack form fields vertically */
+        gap: 10px;
+    }
+
+    #contact .control {
+        margin: 10px 0;
+        padding: 8px;
+        font-size: 14px;
+        /* Smaller font for input fields */
+    }
+
+    input {
+        height: 45px;
+        /* Adjust input height */
+    }
+
+    #contact .contact_form_bottom {
         flex-direction: column;
         align-items: stretch;
     }
-    #contact .contact_form{
-        max-width: 100%;
-        padding: 20px;
-        
+
+    #contact .contact_options .option {
+        padding: 0.8rem;
+    }
+
+    #contact .contact_options .icon_container {
+        width: 3rem;
+        height: 3rem;
+        font-size: 20px;
+    }
+
+    #contact .contact_options .name {
+        font-size: 14px;
+        /* Smaller font for text */
+    }
+
+    #contact .contact_options .text_muted {
+        font-size: 13px;
     }
 }

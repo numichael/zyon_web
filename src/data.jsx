@@ -145,7 +145,7 @@ export const testimonial = [
     image:profile5,
     name:'Mr. John Njezi',
     review: ` I highly recommend Zyon Technology Ventures. Their attention to detail, reliability, and consistent delivery make them a trusted technology partner.`,
-    position: "Software Engineer, BlueChips Integrated Solutions."
+    position: "software Engineer, BlueChips Integrated Solutions."
   }
 
 ];

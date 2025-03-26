@@ -40,7 +40,7 @@ const Footer = () => {
       <div className="copyright">
         <div className="container">
           <h3>Copyright &copy; All rights reserved | 2025</h3>
-          <p className='text_muted'>Digit X web</p>
+          <p className='text_muted'>Digit Xcellence Web</p>
         </div>
       </div>
     </footer>
