@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="column">
             <Logo />
             <form className="newsletter">
-              <h3>Get weekly updates</h3>
+              <h3>Get tech updates</h3>
               <div className="control_container">
                 <input type="email" placeholder='Enter your email address' className='control' />
                 <button className="btn" type='button'>Subscribe</button>
