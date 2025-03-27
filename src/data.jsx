@@ -87,7 +87,7 @@ export const teams = [
     title:"Technical Engineer",
     profile:member4,
     social:[
-      {name:"Facebook",icon:<CiFacebook/>,url:"https://web.facebook.com/engranyaemmanuel.chukwuma"},
+      {name:"Facebook",icon:<CiFacebook/>,url:"https://web.facebook.com/techwithdct"},
       {name:"LinkedIn",icon:<CiLinkedin/>,url:"Linkedin.com"},
     ]
   },
