@@ -2,8 +2,7 @@ import { IoCallOutline,IoLocationOutline } from "react-icons/io5";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaShoppingCart, FaShieldAlt, FaServer, FaLaptopCode, FaChalkboardTeacher } from "react-icons/fa";
 import { CiLinkedin ,CiFacebook} from "react-icons/ci";
-import { profile2, profile3,profile4,profile5,
-         member1, member2, member3, member4,property,giz,
+import { member1, member2, member3, member4,property,giz,
          florax, kings,blog1,blog2,blog3} from "./assets";
 import { BiSupport } from "react-icons/bi";
 
@@ -84,7 +83,7 @@ export const teams = [
     ]
   },
   {
-    name:"Emmanuel Anya",
+    name:"David Augustine",
     title:"Technical Engineer",
     profile:member4,
     social:[
@@ -124,25 +123,25 @@ export const projects = [
 
 export const testimonial = [
   {
-    image:profile2,
+    // image:profile2,
     name:'Mr. Stanley Samuel',
     review: ` Zyon Technology Ventures has made IT procurement remarkably easy for us at GIZ. Their commitment to quality, timely delivery, and customer satisfaction sets them apart.`,
     position: "Finance Officer, GIZ, Lagos"
   },
   {
-    image:profile3,
+    // image:profile3,
     name:'Pharm. Chinonso',
     review: ` The technical support services from Zyon Technology Ventures keep our systems running without interruption. Their responsiveness and professionalism are exactly what every business needs.`,
     position: "Pharmacist, Florax Pharmacy."
   },
   {
-    image:profile4,
+    // image:profile4,
     name:'Mr. Damilola Alabi',
     review: ` Zyon Technology Ventures impressed us with their ability to transform ideas into reliable digital solutions. Their creativity, speed, and precision are truly world-class.`,
     position: "Director, Fusion 87 Studio."
   },
   {
-    image:profile5,
+    // image:profile5,
     name:'Mr. John Njezi',
     review: ` I highly recommend Zyon Technology Ventures. Their attention to detail, reliability, and consistent delivery make them a trusted technology partner.`,
     position: "software Engineer, BlueChips Integrated Solutions."

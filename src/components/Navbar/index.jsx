@@ -36,8 +36,8 @@ const Navbar = () => {
   useGSAP(() => {
     const timeline = gsap.timeline({ stagger: .2 })
     timeline 
-      .from(".logo", { opacity: 0, x: -100, delay: .2 })
-      .from(".tab", { opacity: 0, stagger: .3 })
+      .from(".logo", { opacity: 0, x: -100, delay: .1 })
+      .from(".tab", { opacity: 0, stagger: .1 })
       .from('.buttons',{opacity:0,x:100})
   }, { scope: container })
   

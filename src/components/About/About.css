@@ -78,8 +78,8 @@
     #about .container {
         grid-template-columns: 1fr;
     }
-    #about .company_photo {
-        display: none;
+    /* #about .company_photo {
+        display: none; */
     }
     #about .title,
     #about .description {
@@ -88,7 +88,7 @@
     #about .buttons_container {
         justify-content: center;
     }
-}
+
 
 @media (max-width: 600px) {
     #about .group {

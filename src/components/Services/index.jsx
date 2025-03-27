@@ -14,7 +14,7 @@ const Services = () => {
       delay: .1,
       scrollTrigger: {
         trigger: container.current,
-        start: "20% bottom",
+        start: "top bottom",
         end:"bottom top",
       }
     })

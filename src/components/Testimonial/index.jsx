@@ -39,22 +39,31 @@ const Testimonial = () => {
           
     },{scope:container})
   const settings = {
-    infinite: true,
-    speed: 700,
-    slidesToShow: 2,
-    centerMode: true,
-    pauseOnHover: true,
-    autoplay: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 2, // Shows 2 slides by default
+  slidesToScroll: 1,
+  centerMode: false, // Ensure proper alignment
+  pauseOnHover: true,
+  autoplay: true,
     autoplaySpeed: 2000,
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-        }
+  responsive: [
+    {
+      breakpoint: 1024, // Tablets
+      settings: {
+        slidesToShow: 1,
       }
-    ]
-  };
+    },
+    {
+      breakpoint: 600, // Mobile devices
+      settings: {
+        slidesToShow: 1,
+        centerMode: false, // Ensures full width
+      }
+    }
+  ]
+};
+
   return (
     <section id='testimonial' ref={container}>
       <div className="container">
@@ -68,7 +77,7 @@ const Testimonial = () => {
               <React.Fragment key={index}>
                 <div className="user_row">
                   <div className="profile">
-                    <img src={list.image} alt={list.name} />
+                    {/* <img src={list.image} alt={list.name} /> */}
                   </div>
                   <div className="details">
                     <h3 className="name">{list.name}</h3>

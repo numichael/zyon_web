@@ -8,26 +8,32 @@ import { useGSAP } from '@gsap/react';
 
 const Header = () => {
   const container = useRef(null);
+
   useGSAP(() => {
     const timeline = gsap.timeline({ delay: .3, stagger: .3 });
-    timeline.fromTo(
-      ".image_container",
-      { scale: .5, opacity: 0, y: 150 },
-      {scale:1,ease:'sine.in',opacity:1,y:0}
-    )
+    
+    timeline
+      .fromTo(
+        ".image_container",
+        { scale: .5, opacity: 0, y: 150 },
+        { scale: 1, ease: 'sine.in', opacity: 1, y: 0 }
+      )
       .from(
-        "title",
-        {opacity:0,y:-30}
-    )
-     .from(
-        "description",
-        {opacity:0,y:-30}
-    )
-     .from(
-        "buttons_container",
-        {opacity:0,y:40}
-    )
-  },{scope:container})
+        ".title",  // ✅ Correct class selector
+        { opacity: 0, y: -30 },
+        "-=0.3"  // Starts a little earlier for smoother animation
+      )
+      .from(
+        ".description",  // ✅ Correct class selector
+        { opacity: 0, y: -30 },
+        "-=0.2"
+      )
+      .from(
+        ".buttons_container",  // ✅ Correct class selector
+        { opacity: 0, y: 40 }
+      );
+  }, { scope: container });
+
   return (
     <header id='header' ref={container}>
       <div className="container full_height">
