@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { send } from '@emailjs/browser'; // ✅ Correct EmailJS import
 import "./Contact.css";
 import { contacts } from '../../data';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import emailjs from '@emailjs/browser';
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
@@ -16,32 +16,36 @@ const Contact = () => {
     message: "",
   });
 
+  const [statusMessage, setStatusMessage] = useState(""); // Holds success/failure message
+  const [isSending, setIsSending] = useState(false); // Shows loading state
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
-    send(
-      "service_h5u812c",  
-      "template_ymg7wc9", 
+    setIsSending(true);
+
+    emailjs.send(
+      "service_h5u812c",
+      "template_ymg7wc9",
       {
-        from_name: form.firstname + " " + form.lastname, // ✅ Match EmailJS template variables
-        from_email: form.email, 
+        form_name: `${form.firstname} ${form.lastname}`,
+        form_email: form.email,
         phone: form.phone,
         message: form.message,
       },
-      "M5pADutSG5C36-j-C" // ✅ Ensure correct Public Key
-    )
-    .then(
+      "M5pADutSG5C36-j-C"
+    ).then(
       (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        alert("Message Sent Successfully!");
-        setForm({ firstname: "", lastname: "", email: "", phone: "", message: "" });
+        setStatusMessage("Message sent successfully!");
+        setIsSending(false);
+        setForm({ firstname: "", lastname: "", email: "", phone: "", message: "" }); // Clear form
       },
       (error) => {
-        console.error("FAILED...", error);
-        alert("Failed to send message. Check console for errors.");
+        setStatusMessage("Failed to send message. Please try again.");
+        setIsSending(false);
       }
     );
   };
@@ -53,12 +57,14 @@ const Contact = () => {
       scrollTrigger: {
         trigger: container.current,
         start: "top bottom",
-        end:"bottom top",
+        end: "bottom top",
       }
     });
+
     timeline
-      .fromTo(".contact_form", { x: 100, opacity: 0 }, { opacity:1, x:0 })
-      .fromTo(".option", { x:100, opacity:0 }, { opacity:1, stagger:.1, x:0 });
+      .fromTo(".contact_form", { x: 100, opacity: 0 }, { opacity: 1, x: 0 })
+      .fromTo(".option", { x: 100, opacity: 0 }, { opacity: 1, stagger: .1, x: 0 });
+
   }, { scope: container });
 
   return (
@@ -86,16 +92,19 @@ const Contact = () => {
               <textarea name="message" cols={20} rows={10} placeholder='Message' className='control' value={form.message} onChange={handleChange} required></textarea>
             </div>
             <div className="contact_form_bottom">
-              <button type='submit' className="btn btn_primary">Send Message</button>
+              <button type='submit' className="btn btn_primary" disabled={isSending}>
+                {isSending ? "Sending..." : "Send Message"}
+              </button>
             </div>
           </form>
+
+          {/* Success/Error Message UI */}
+          {statusMessage && <p className="status_message">{statusMessage}</p>}
         </div>
         <div className="contact_options">
           {contacts.map((contact, index) => (
             <div className="option" key={index}>
-              <div className="icon_container">
-                {contact.icon}
-              </div>
+              <div className="icon_container">{contact.icon}</div>
               <h3 className='name'>{contact.name}</h3>
               <h4 className="text_muted">{contact.value}</h4>
               <div>

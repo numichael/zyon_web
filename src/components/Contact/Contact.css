@@ -107,6 +107,18 @@ input{
     margin-top: 20px;
 }
 
+.status_message {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: blue;
+}
+
+.status_message.error {
+    color: red;
+}
+
 /* Responsive code */
 /* Tablets (up to 800px) */
 @media (max-width: 800px) {
